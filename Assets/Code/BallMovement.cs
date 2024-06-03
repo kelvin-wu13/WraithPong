@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEditor.U2D.Path;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BallMovement : MonoBehaviour
 {
     [SerializeField] private float InitialSpeed = 10;
-    [SerializeField] private float SpeedIncrease = 0.25f;
+    [SerializeField] private float SpeedIncrease = 0.05f;
     [SerializeField] private Text PlayerScore;
     [SerializeField] private Text AIScore;
     private int HitCounter;
@@ -20,6 +21,10 @@ public class BallMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, InitialSpeed + (SpeedIncrease * HitCounter));
+        if(int.Parse(PlayerScore.text) == 5 || int.Parse(AIScore.text) == 5)
+        {
+            SceneManager.LoadSceneAsync(0);
+        }
     }
     private void StartBall()
     {
