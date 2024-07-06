@@ -2,7 +2,7 @@ GameProgramming(Project Pong)
 Title : WraithPong
 
 --Link itch.io--
-Link://Enter Link//
+Link:[//Enter Link//](https://kelvin-wu13.itch.io/wraithpong)
 
 --Link Youtube--
 Link://Enter LInk//
